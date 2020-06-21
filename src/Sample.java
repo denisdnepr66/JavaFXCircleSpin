@@ -21,6 +21,8 @@ public class Sample extends Application {
         Circle circle4 = new Circle(250,150,55, Color.RED);
         Circle outerCircle1 = new Circle(250,250,15,Color.TRANSPARENT);
         Circle innerCircle1 = new Circle(250,200,15,Color.TRANSPARENT);
+        Circle outerCircle2 = new Circle(250, 50, 20,Color.GREEN);
+        Circle innerCircle2 = new Circle(250, 100, 20,Color.RED);
 
         Slider slider = new Slider(0,1,0.5);
         slider.setPrefSize(500,500);
@@ -32,8 +34,8 @@ public class Sample extends Application {
             rotate.set((Double)(newValue)*6D);
         });
 
-        Group movingOuter = new Group(outerCircle1,outerCircle);
-        Group movingInner = new Group(innerCircle1,innerCircle);
+        Group movingOuter = new Group(outerCircle1,outerCircle2, outerCircle);
+        Group movingInner = new Group(innerCircle1,innerCircle2, innerCircle);
         Group root = new Group(circle3,circle1,circle4,circle2,movingOuter,movingInner, slider);
 
         AnimationTimer timer = new AnimationTimer() {
